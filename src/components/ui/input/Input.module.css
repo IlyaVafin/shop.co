@@ -1,0 +1,17 @@
+.inputWrapper {
+	display: flex;
+	position: relative;
+}
+.iconsInput {
+	position: absolute;
+	top: 12px;
+	left: 16px;
+	cursor: pointer;
+}
+
+.inputComponent {
+	padding-left: 52px;
+	font-weight: 400;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.4);
+}

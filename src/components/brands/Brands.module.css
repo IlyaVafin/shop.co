@@ -1,0 +1,24 @@
+.brands  {
+	background: #000;
+	max-width: 100vw;
+}
+
+.brands div {
+	max-width: 1240px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	height: 122px;
+}
+
+.brands li {
+	max-height: 40px;
+}
+
+@media (max-width: 1250px) {
+	.brands div {
+		
+	}
+}

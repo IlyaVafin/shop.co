@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "name": "FADED SKINNY JEANS",
+    "category": "jeans",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 210,
+    "imageUrl": "https://storage.vsemayki.ru/images/0/3/3018/3018509/previews/people_4_manshort_back_black_500.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Black Striped T-shirt",
+    "category": "t-shirt",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 120,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXPz2JCR3PjnH0r1Iegf28J0nOIUoOfEsCVA&s"
+  },
+  {
+    "id": 3,
+    "name": "SLEEVE STRIPED T-SHIRT",
+    "category": "t-shirt",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 130,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIcEEtPBTEQweGLwi4bYkcsHJRuQNQNfbl_A&s"
+  },
+  {
+    "id": 4,
+    "name": "VERTICAL STRIPED SHIRT",
+    "category": "t-shirt",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 212,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIcEEtPBTEQweGLwi4bYkcsHJRuQNQNfbl_A&s"
+  },
+  {
+    "id": 5,
+    "name": "Polo with Contrast Trims",
+    "category": "t-shirt",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 212,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBR3XDhABO9wy-v49dn3VZzug0yEPfI5xdpA&s"
+  },
+  {
+    "id": 6,
+    "name": "Elegant Black Dress",
+    "category": "dress",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 145,
+    "imageUrl": "https://media.bergdorfgoodman.com/f_auto,q_auto:good,ar_5:7,c_fill,dpr_1.0,w_720/01/bg_4524608_100106_m"
+  },
+  {
+    "id": 7,
+    "name": "Classic Green Cap",
+    "category": "hat",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 175,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPxBrfztPQgKOajwLEK8ZVwfEsBYYfJ8HDVQ&s"
+  },
+  {
+    "id": 8,
+    "name": "Classic Blue Shorts",
+    "category": "shorts",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 340,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGDiU8sSFSPUZ2eYvKyn4sv7XXYQmaCSl4FQ&s"
+  },
+  {
+    "id": 9,
+    "name": "Sport Pink Shorts",
+    "category": "shorts",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 225,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfKxxSRVQGLkc7y-8hcYStKEVd4e8g452Dw&s"
+  },
+  {
+    "id": 10,
+    "name": "Classic Orange Cap",
+    "category": "hat",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 490,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL-kx4Lfq1ugjl0nbwtm-eUHH105PAUZxfqQ&s"
+  },
+  {
+    "id": 11,
+    "name": "Casual Brown Shorts",
+    "category": "shorts",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 100,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKETlHTY20msfzD_9_f-MTMe1wWDvZFZ85SQ&s"
+  },
+  {
+    "id": 12,
+    "name": "Vintage Yellow Dress",
+    "category": "dress",
+    "size": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large"
+    ],
+    "price": 215,
+    "imageUrl": "https://example.com/images/dress-12.jpg"
+  }
+]

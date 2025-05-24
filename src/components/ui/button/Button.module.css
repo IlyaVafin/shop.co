@@ -1,0 +1,25 @@
+.buttonComponent {
+	border-radius: 62px;
+}
+
+.transparentBtn {
+	background: transparent;
+	color: #000;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.grayBtn {
+	background: #f0f0f0;
+	color: rgba(0, 0, 0, 0.6);
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.blackBtn {
+	background: #000;
+	color: #fff;
+	font-weight: 500;
+	font-size: 16px;
+}
