@@ -28,3 +28,11 @@ button, input {
   border-radius: 62px;
 }
 
+.line {
+  max-width: clamp(358px, 90%, 1240px);
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-bottom: 108px;
+  margin-top: 64px;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import s from './Button.module.css'
 interface ButtonProps {
 	variant?: 'transparent' | 'black' | 'gray'
@@ -7,7 +7,9 @@ interface ButtonProps {
 	children?: React.ReactNode
 	borderRadius?: string
 	background?: string
-	onClick?: React.MouseEventHandler<HTMLButtonElement>
+	onClick?: React.MouseEventHandler<HTMLButtonElement> 
+	disabled?: boolean
+	style?: CSSProperties
 }
 
 export default function Button({
@@ -17,10 +19,13 @@ export default function Button({
 	children,
 	borderRadius,
 	background,
+	disabled,
+	style,
 	onClick,
 }: ButtonProps) {
 	return (
 		<button
+		disabled={disabled}
 			onClick={onClick}
 			className={`buttonComponent ${
 				variant === 'transparent'
@@ -36,6 +41,7 @@ export default function Button({
 				width: btnWidth,
 				height: btnHeight,
 				background: background,
+				...style
 			}}
 		>
 			{children}

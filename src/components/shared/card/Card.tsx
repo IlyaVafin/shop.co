@@ -9,6 +9,7 @@ export default function Card({ end, start }: { end: number; start: number }) {
 		<>
 			{error && <p>Не удалось получить информацию :(</p>}
 			{isLoading && <p>Загрузка</p>}
+
 			<ul className={s.listCarts}>
 				{data && !error && (
 					<>
@@ -21,8 +22,8 @@ export default function Card({ end, start }: { end: number; start: number }) {
 										src={item.imageUrl}
 										alt={item.name}
 									/>
-									<p>{item.name}</p>
-									<p>{item.price}$</p>
+									<p className={s.name}>{item.name}</p>
+									<p className={s.price}>${item.price}</p>
 								</Link>
 							</li>
 						))}

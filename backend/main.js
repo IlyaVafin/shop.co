@@ -7,10 +7,10 @@ import { fileURLToPath } from 'url';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Разрешаем запросы из любого источника (для пет-проекта удобно)
+
 app.use(cors());
 
-// Подгружаем JSON один раз при старте
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
 const DATA_PATH  = path.join(__dirname, '../src/api/clothing_catalog.json');
@@ -29,9 +29,7 @@ async function loadData() {
 }
 await loadData();
 
-/* ----------  РОУТЫ  ---------- */
 
-// Все товары + фильтры
 app.get('/api/products', (req, res) => {
   const { category, minPrice, maxPrice } = req.query;
 
@@ -50,7 +48,7 @@ app.get('/api/products', (req, res) => {
   res.json(list);
 });
 
-// Один товар по ID
+
 app.get('/api/products/:id', (req, res) => {
   const id = Number(req.params.id);
   const product = products.find(p => p.id === id);

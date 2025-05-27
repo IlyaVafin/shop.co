@@ -9,6 +9,11 @@ export default function Basket() {
 	const dispatch = useDispatch()
 	return (
 		<>
+			{cart.length === 0 && (
+				<p className='flex items-center justify-center'>
+					Корзина пуста! Добавьте что нибудь...
+				</p>
+			)}
 			<ul>
 				{cart.map(item => (
 					<li key={item.id}>

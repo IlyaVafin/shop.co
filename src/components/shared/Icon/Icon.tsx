@@ -18,7 +18,7 @@ export default function Icon({
 				style={{ width: Iconwidth, height: Iconheight, ...style }}
 				className={className}
 			>
-				<use href={`/sprite.svg#${id}`}></use>
+				<use href={`/sprite.svg/#${id}`}></use>
 			</svg>
 		</>
 	)

@@ -1,4 +1,23 @@
 .listCarts {
 	display: grid;
 	grid-template-columns: 295px 295px 295px 295px;
+	column-gap: 20px;
+}
+.listCarts li img {
+	max-height: 270px;
+	min-width: 295px;
+	border-radius: 20px;
+}
+
+.listCarts p {
+	font-weight: 700;
+}
+
+.name {
+	font-size: 20px;
+	margin-top: 16px;
+}
+
+.price {
+	font-size: 24px;
 }
