@@ -3,9 +3,6 @@ import Link from 'next/link'
 import Card from '../shared/card/Card'
 import Title from '../shared/Title/Title'
 import Button from '../ui/button/Button'
-import { useGetProductsQuery } from '@/store/productsApi'
-import { useDispatch } from 'react-redux'
-import { addToCart } from '@/store/cartSlice'
 
 export default function Topics({
 	title,

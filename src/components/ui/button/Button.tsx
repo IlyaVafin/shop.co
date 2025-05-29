@@ -10,6 +10,7 @@ interface ButtonProps {
 	onClick?: React.MouseEventHandler<HTMLButtonElement> 
 	disabled?: boolean
 	style?: CSSProperties
+	className?: string
 }
 
 export default function Button({
@@ -22,6 +23,7 @@ export default function Button({
 	disabled,
 	style,
 	onClick,
+	className
 }: ButtonProps) {
 	return (
 		<button
@@ -35,7 +37,7 @@ export default function Button({
 					: variant === 'gray'
 					? s.grayBtn
 					: ''
-			}`}
+			} ${className}`}
 			style={{
 				borderRadius: borderRadius,
 				width: btnWidth,

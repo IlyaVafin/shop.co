@@ -1,0 +1,16 @@
+.price {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 32px;
+	color: #000;
+}
+
+.description {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 137%;
+	color: rgba(0, 0, 0, 0.6);
+	margin-bottom: 24px;
+	margin-top: 20px;
+}

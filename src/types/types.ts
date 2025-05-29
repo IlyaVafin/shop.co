@@ -1,9 +1,10 @@
 export interface Product {
 	id: number
 	name: string
-	size?: string[]
+	size: string[] | string
 	price?: number
 	imageUrl: string
 	quantity: number
 	description: string
+	color: string | null
 }

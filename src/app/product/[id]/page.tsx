@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import Title from '@/components/shared/Title/Title'
 import Button from '@/components/ui/button/Button'
 import SelectedColor from '@/components/ui/selectedColor/SelectedColor'
@@ -9,13 +10,13 @@ import {
 	incrementQuantity,
 } from '@/store/cartSlice'
 import Image from 'next/image'
-import { useState } from 'react'
 import s from './Product.module.css'
 import Sizes from '@/components/ui/sizes/Sizes'
 
 export default function Product() {
 	const { cartItem, data, isError, isLoading, dispatch } = useGetPath()
-
+	const [selectedColor, setSelectedColor] = useState<null | string>(null)
+	const [selectedSize, setSelectedSize] = useState<string | string[]>('')
 	if (isLoading) return <p>Загрузка...</p>
 	if (isError) return <p>Не удалось получить информацию о товаре :(</p>
 
@@ -24,16 +25,29 @@ export default function Product() {
 			{data && (
 				<>
 					<div className='container'>
-						<div className='flex gap-10'>
-							<Image width={444} height={530} alt='' src={data.imageUrl} />
-							
+						<div className='flex gap-10 mb-20'>
+							<Image
+								style={{ borderRadius: '20px' }}
+								width={444}
+								height={530}
+								alt=''
+								src={data.imageUrl}
+							/>
 							<div className={s.desc}>
 								<Title size='40px'>One Life Graphic T-shirt</Title>
+
 								<p className={s.price}>${data.price}</p>
-								<p>{data.description}</p>
-								<p>Select Colors</p>
-								<SelectedColor />
-								<Sizes/>
+
+								<p className={s.description}>{data.description}</p>
+
+								<SelectedColor
+									selectedColor={selectedColor}
+									setSelectedColor={setSelectedColor}
+								/>
+								<Sizes
+									selectedSize={selectedSize}
+									setSelectedSize={setSelectedSize}
+								/>
 								<div className='flex items-center gap-[20px]'>
 									{cartItem ? (
 										<>
@@ -61,8 +75,16 @@ export default function Product() {
 												btnWidth='400px'
 												btnHeight='52px'
 												variant='black'
-												onClick={() => dispatch(addToCart(data))}
-												style={{ opacity: '0.5' }}
+												onClick={() =>
+													dispatch(
+														addToCart({
+															...data,
+															color: selectedColor,
+															size: selectedSize,
+														})
+													)
+												}
+												className='opacity-50'
 											>
 												Add to cart
 											</Button>
@@ -73,8 +95,16 @@ export default function Product() {
 											btnWidth='400px'
 											btnHeight='52px'
 											variant='black'
-											onClick={() => dispatch(addToCart(data))}
-											style={{ opacity: '1' }}
+											onClick={() =>
+												dispatch(
+													addToCart({
+														...data,
+														color: selectedColor,
+														size: selectedSize,
+													})
+												)
+											}
+											className='opacity-100'
 										>
 											Add to cart
 										</Button>
