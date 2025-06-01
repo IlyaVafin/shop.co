@@ -8,6 +8,7 @@
 - Redux Toolkit
 - RTK Query
 - TypeScript 
+- Node.js (express)
 
 # Локальный запуск 
 
