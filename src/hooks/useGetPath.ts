@@ -3,6 +3,7 @@ import { RootState } from '@/store/store'
 import { useParams } from 'next/navigation'
 import { useDispatch } from 'react-redux'
 import { useGetProductByIdQuery } from '@/store/productsApi'
+
 export default function useGetPath() {
 	const param = useParams()
 	const id = param?.id

@@ -83,7 +83,7 @@ export default function Header() {
 								id='icon-bucket-header'
 							/>
 						</Link>
-						<Link href='/user'>
+						<Link href=''>
 							<Icon Iconheight='24px' Iconwidth='24px' id='icon-user' />
 						</Link>
 					</div>

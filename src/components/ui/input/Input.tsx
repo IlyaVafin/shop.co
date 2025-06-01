@@ -7,7 +7,7 @@ interface InputProps {
 	inputHeight?: string
 	inputPlaceholder?: string
 	style?: CSSProperties
-	inputBackground: string
+	inputBackground?: string
 }
 
 export default function Input({

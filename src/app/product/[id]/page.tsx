@@ -1,119 +1,91 @@
 'use client'
-import { useState } from 'react'
 import Title from '@/components/shared/Title/Title'
 import Button from '@/components/ui/button/Button'
+import { ButtonCounter } from '@/components/ui/ButtonCounter'
 import SelectedColor from '@/components/ui/selectedColor/SelectedColor'
+import Sizes from '@/components/ui/sizes/Sizes'
+import { addToCart } from '@/store/cartSlice'
+import useСharacteristicsProduct from '@/hooks/useCharacteristicsProduct'
 import useGetPath from '@/hooks/useGetPath'
-import {
-	addToCart,
-	decrementQuantity,
-	incrementQuantity,
-} from '@/store/cartSlice'
 import Image from 'next/image'
 import s from './Product.module.css'
-import Sizes from '@/components/ui/sizes/Sizes'
 
 export default function Product() {
 	const { cartItem, data, isError, isLoading, dispatch } = useGetPath()
-	const [selectedColor, setSelectedColor] = useState<null | string>(null)
-	const [selectedSize, setSelectedSize] = useState<string | string[]>('')
-	if (isLoading) return <p>Загрузка...</p>
-	if (isError) return <p>Не удалось получить информацию о товаре :(</p>
+	const {
+		selectedColor,
+		selectedSize,
+		sizeError,
+		setSelectedColor,
+		colorError,
+		setSelectedSize,
+		setColorError,
+		setSizeError,
+	} = useСharacteristicsProduct()
+
+	function AddToCart() {
+		const isColorMissing = selectedColor === null
+		const isSelectedSize = selectedSize === null
+
+		setColorError(isColorMissing)
+		setSizeError(isSelectedSize)
+
+		if (isColorMissing || isSelectedSize) return
+		if (!data) return
+
+		const productToAdd = { ...data, color: selectedColor, size: selectedSize }
+		dispatch(addToCart(productToAdd))
+	}
+
+	if (!data) return null
+
+	if (isLoading) return <p>Loading...</p>
+	if (isError) return <p>Something wrong :( </p>
 
 	return (
 		<>
 			{data && (
-				<>
-					<div className='container'>
-						<div className='flex gap-10 mb-20'>
-							<Image
-								style={{ borderRadius: '20px' }}
-								width={444}
-								height={530}
-								alt=''
-								src={data.imageUrl}
+				<div className='container'>
+					<div className='flex gap-10 mb-20'>
+						<Image
+							className='rounded-[20px]'
+							width={444}
+							height={530}
+							alt={data.name}
+							src={data.imageUrl}
+						/>
+						<div className={s.desc}>
+							<Title size='40px'>One Life Graphic T-shirt</Title>
+							<p className={s.price}>${data.price}</p>
+							<p className={s.description}>{data.description}</p>
+							<SelectedColor
+								selectedColor={selectedColor}
+								setSelectedColor={setSelectedColor}
+								error={colorError}
 							/>
-							<div className={s.desc}>
-								<Title size='40px'>One Life Graphic T-shirt</Title>
-
-								<p className={s.price}>${data.price}</p>
-
-								<p className={s.description}>{data.description}</p>
-
-								<SelectedColor
-									selectedColor={selectedColor}
-									setSelectedColor={setSelectedColor}
-								/>
-								<Sizes
-									selectedSize={selectedSize}
-									setSelectedSize={setSelectedSize}
-								/>
-								<div className='flex items-center gap-[20px]'>
-									{cartItem ? (
-										<>
-											<div className='flex w-[170px] items-center justify-around h-[52px] rounded-[20px] bg-[#f0f0f0] text-[16px]'>
-												<Button
-													onClick={() =>
-														dispatch(decrementQuantity(cartItem.id))
-													}
-												>
-													-
-												</Button>
-												<span style={{ background: '#f0f0f0' }}>
-													{cartItem.quantity}
-												</span>
-												<Button
-													onClick={() =>
-														dispatch(incrementQuantity(cartItem.id))
-													}
-												>
-													+
-												</Button>
-											</div>
-											<Button
-												disabled={true}
-												btnWidth='400px'
-												btnHeight='52px'
-												variant='black'
-												onClick={() =>
-													dispatch(
-														addToCart({
-															...data,
-															color: selectedColor,
-															size: selectedSize,
-														})
-													)
-												}
-												className='opacity-50'
-											>
-												Add to cart
-											</Button>
-										</>
-									) : (
-										<Button
-											disabled={false}
-											btnWidth='400px'
-											btnHeight='52px'
-											variant='black'
-											onClick={() =>
-												dispatch(
-													addToCart({
-														...data,
-														color: selectedColor,
-														size: selectedSize,
-													})
-												)
-											}
-											className='opacity-100'
-										>
-											Add to cart
-										</Button>
-									)}
-								</div>
+							<Sizes
+								selectedSize={selectedSize}
+								setSelectedSize={setSelectedSize}
+								error={sizeError}
+							/>
+							<div className='flex items-center gap-[20px]'>
+								{cartItem && (
+									<ButtonCounter width='170px' cartItem={cartItem} />
+								)}
+								<Button
+									onClick={AddToCart}
+									disabled={cartItem ? true : false}
+									btnWidth='400px'
+									btnHeight='52px'
+									variant='black'
+									className={cartItem ? 'opacity-50' : 'opacity-100'}
+								>
+									Add to Cart
+								</Button>
 							</div>
 						</div>
 					</div>
-				</>
+				</div>
 			)}
 		</>
 	)

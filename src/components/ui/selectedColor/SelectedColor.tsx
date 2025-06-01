@@ -4,12 +4,14 @@ import Button from '../button/Button'
 interface ISelectedColor {
 	selectedColor: string | null
 	setSelectedColor: (color: string) => void
+	error: boolean
 }
 const buttonColors = ['brown', 'green', 'black']
 
 export default function selectedColor({
 	selectedColor,
 	setSelectedColor,
+	error,
 }: ISelectedColor) {
 	return (
 		<>
@@ -38,6 +40,9 @@ export default function selectedColor({
 						</li>
 					))}
 				</div>
+				{error && (
+					<p className='mb-2 text-red-500 mt-[-10px]'>Choose color :)</p>
+				)}
 			</ul>
 		</>
 	)
